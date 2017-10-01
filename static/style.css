@@ -1,0 +1,73 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Serif);
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+body {
+  font-family: 'PT Serif',sans-serif;
+  font-size: 16px;
+}
+
+h1,h2,h3 {
+  font-family: Poppins, Arial;
+  font-variant:small-caps;
+}
+
+textarea {
+  resize: none;
+  width: 95%;
+}
+
+hr {
+  border-top:1px dashed #ddd;
+  border-bottom:1px dashed #ddd;
+}
+
+article {
+  margin: 20px 40px 20px 40px;
+}
+
+.editsec {
+  float:left; 
+  width:33%;
+}
+
+.prevsec {
+  float:right; 
+  width:62%;
+}
+
+p {
+  line-height: 150%;
+}
+
+nav {
+  margin-top: 50px;
+}
+
+.round .button {
+		display: inline-block;
+		position: relative;
+		overflow: hidden;
+		border: 2px solid crimson;
+		transition: color .5s;
+}
+
+input[type="button"] {
+  border: 2px solid blue;
+  background-color: #fff;
+}
+
+input[type="button"]:hover {
+  background-color: #eee;
+  cursor: pointer;
+  color: red;
+}
+
+.showPrev:hover {
+  cursor: pointer;
+  color: black;
+  text-decoration: underline;
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}

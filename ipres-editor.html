@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>IPRES - an HTML Slide Editor</title>
+<link href="static/favicon.png" rel="icon"/>
+<link rel='stylesheet' href='static/style.css'/>
+<!-- http://www.mkyong.com/jquery/how-to-add-remove-textbox-dynamically-with-jquery/ --> 
+<!-- <script src="jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script type="text/javascript" src="static/ipresEdit.js"></script>
+</head>
+
+<body>
+<article>
+<nav><center><a href="#"><img src="static/logo.png"/ height="40px;"></a></center></nav>
+
+<p>IPRES is a simple HTML wrapper / presentation editor (<a href="https://github.com/zglu/ipres">https://github.com/zglu/ipres</a>).<br><strong>To edit:</strong> click '<strong>add slide</strong>' and insert your <strong>HTML code</strong> between section and /section. You can use <a href="plus/m2h.html" target="_blank">markdown to html converter</a> or <a href="https://html-online.com/editor/" target="_blank">WYSIWYG html editor</a> to quickly get your content in html. <br>
+ <strong>To preview:</strong> click '<strong>Preview</strong>' and navigate the slides using <i class="fa fa-arrow-left"></i> and <i class="fa fa-arrow-right"></i>. <br>
+<strong>To export:</strong> click '<strong>Get Code</strong>' and save the code to an .html file. (<a href="plus/ipres-demo.html" target="_blank">Demo</a>)</p>
+
+<section class="editsec">
+<h2 style="color: blue">Edit <i class="fa fa-pencil"></i></h2><hr>
+
+<div> <!-- head part -->
+<label>Head (edit when necessary): </label><br>
+<!-- Code for default slide -->
+<textarea rows="6" id="boxHead" type="text">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My Slides</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src='https://code.highcharts.com/highcharts.js'></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+</head>
+<body>
+<!-- start of slides -->
+</textarea>
+</div>
+
+<!-- slide content -->
+<div id="TextBoxesGroup"></div>
+
+<div> <!-- foot part -->
+<label>Foot (edit when necessary): </label><br>
+<textarea rows="6" id="boxFoot" type="text">
+<!-- end of slides -->
+<script>
+function plusSlides(e){showSlides(slideIndex+=e)}function currentSlide(e){showSlides(slideIndex=e)}function showSlides(e){var s,l=$(".mySlide");for(e>l.length&&(slideIndex=1),e<1&&(slideIndex=l.length),s=0;s<l.length;s++)l[s].style.display="none";l[slideIndex-1].style.display="block"}$(document).keydown(function(e){switch(e.which){case 37:plusSlides(-1);break;case 39:plusSlides(1);break;default:return}e.preventDefault()});var slideIndex=1;showSlides(slideIndex);
+</script>
+</body>
+</html>
+</textarea>
+</div>
+
+<input value="Add Slide" id="addButton" type="button">
+<input value="Remove Last" id="removeButton" type="button">
+<input value="Get Code" id="getCode" type="button">
+</section>
+
+<section class="prevsec">
+<span class="showPrev"><h2 id="previewButton" style="color: red;">Preview <i class="fa fa-eye"></i></h2></span><hr>
+<div id="preview"></div>
+</section>
+
+</article>
+</body>
+</html>
