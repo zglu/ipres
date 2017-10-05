@@ -2,20 +2,19 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>IPRES - Demo Slides</title>
+<title>IPRES Demo - Shower</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="static/ipres-default.css"/>
+<link rel="stylesheet" href="static/shower-ribbon-16x10.css"/>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src='https://code.highcharts.com/highcharts.js'></script>
 <script src="https://code.highcharts.com/highcharts-3d.js"></script>
 <script src="https://code.highcharts.com/modules/drilldown.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
 </head>
-<body>
+<body class="shower list">
 <!-- start of slides -->
-
-<section class="mySlide">
-<center style="margin-top: 20%;">
+<section class="slide">
+<center>
 <h1>Interactive Presentation</h1>
 <h3>HTML Slides with HighCharts</h3>
 <p>Authour: ZL<br>
@@ -23,7 +22,7 @@ Date: 30/09/2017</p>
 </center>
 </section>
 
-<section class="mySlide fade">
+<section class="slide fade">
 <h2>List test</h2>
 <ul>
 <li>List item 1</li>
@@ -35,14 +34,14 @@ This is a test paragraph
 </p>
 </section>
 
-<section class="mySlide">
+<section class="slide">
 <h2>Slide with image</h2>
 <figure>
-<img src="static/ipres-demo.png" width="60%">
+<img src="static/ipres-demo.png" height="80%">
 </figure>
 </section>
 
-<section class="mySlide fade">
+<section class="slide fade">
 <h2>Interactive Line Chart</h2>
 <center><div id="line-container" style="width: 80%;"></div></center>
 <pre id="linedata" style="display:none">
@@ -56,7 +55,7 @@ $(function(){var t=$("#linedata").html().replace(/[ \t]+/g,",");new Highcharts.C
 </script>
 </section>
 
-<section class="mySlide fade">
+<section class="slide fade">
 <h2>Interactive Dot Chart</h2>
 <pre id="dotdata" style="display:none">
 sample,val1,val2,val3,val4,val5
@@ -76,7 +75,7 @@ $(function(){var t=$("#dotdata").html().replace(/[ \t]+/g,",");Highcharts.chart(
 </section>
 
 
-<section class="mySlide fade">
+<section class="slide fade">
 <h2>2D Scatter Chart</h2>
 <center><div id="xy-container" style="width: 80%;"></div></center>
 <script>
@@ -84,7 +83,7 @@ $(function(){$.get("static/volcano.csv",function(t){Highcharts.chart("xy-contain
 </script>
 </section>
 
-<section class="mySlide fade">
+<section class="slide fade">
 <h2>Pie Chart</h2>
 <center><div id="pie-container" style="width: 100%;"></div></center>
 <script>
@@ -92,7 +91,7 @@ $(function(){new Highcharts.Chart({chart:{type:"pie",renderTo:"pie-container",st
 </script>
 </section>
 
-<section class="mySlide">
+<section class="slide">
 <h2>Heatmap</h2>
 <pre id="3r3in" style="display:none;">
 x,y,value
@@ -153,16 +152,13 @@ x,y,value
 $(function(){var t=$("#3r3in").html().replace(/[ 	]+/g,",");Highcharts.chart("7yr6mf",{chart:{type:"heatmap",inverted:!1,style:{fontFamily:"Arial"}},data:{csv:t},plotOptions:{heatmap:{dataLabels:{enabled:true,format:"{point.value:.2f}"},turboThreshold:0}},colorAxis:{minColor:"#fff",maxColor:"#000"},title:{text:"Heatmap"},yAxis:{title:{text:""}},legend:{enabled:!1},credits:{enabled:!1},legend:{align:"right",layout:"vertical",margin:0,verticalAlign:"middle",symbolHeight:220},exporting:{enabled:!0},series:[{tooltip:{headerFormat:"",pointFormat:"({point.x}, {point.y}): <b>{point.value}</b>"}}]})});</script>
 </section>
 
-<section class="mySlide">
-<center style="margin-top: 20%;">
+<section class="slide">
+<center>
 <pre><a href="https://ipres.xyz">IPRES</a>: make presentation with interactive charts easy</pre><br>
 <h1>END</h1></center>
 </section>
-
 <!-- end of slides -->
-<script>
-function plusSlides(e){showSlides(slideIndex+=e)}function currentSlide(e){showSlides(slideIndex=e)}function showSlides(e){var s,l=$(".mySlide");for(e>l.length&&(slideIndex=1),e<1&&(slideIndex=l.length),s=0;s<l.length;s++)l[s].style.display="none";l[slideIndex-1].style.display="block"}$(document).keydown(function(e){switch(e.which){case 37:case 38:plusSlides(-1);break;case 39:case 40:plusSlides(1);break;default:return}e.preventDefault()});var slideIndex=1;showSlides(slideIndex);
-</script>
+<script src="static/shower.min.js"></script>
 </body>
 </html>
 
