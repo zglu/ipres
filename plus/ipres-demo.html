@@ -85,11 +85,27 @@ $(function(){$.get("static/volcano.csv",function(t){Highcharts.chart("xy-contain
 </section>
 
 <section class="mySlide fade">
-<h2>Pie Chart</h2>
+<h2>Pie Chart (drilldown)</h2>
 <center><div id="pie-container" style="width: 100%;"></div></center>
 <script>
 $(function(){new Highcharts.Chart({chart:{type:"pie",renderTo:"pie-container",style:{fontFamily:"Arial"},options3d:{enabled:!0,alpha:45,beta:0}},plotOptions:{pie:{allowPointSelect:!0,cursor:"pointer",depth:45,dataLabels:{enabled:!0,format:"<b>{point.name}</b>: {point.y}"}}},title:{text:"Pie Chart"},legend:{enabled:!0},credits:{enabled:!1},tooltip:{pointFormat:"<b>{point.percentage:.1f}%</b>"},series:[{name:"V5.2 set",data:[{name:"Consensus",y:8270,sliced:!0,color:"#880088"},{name:"No consensus",y:2248,color:"#977250",drilldown:"notconsensus"},{name:"Not transferred",y:511,color:"#788286",drilldown:"nottransferred"}]}],drilldown:{series:[{id:"notconsensus",data:[["Isoform is cons",842],["> 90% to Aug",354],["Hypothetical",803],["The rest",488]]},{id:"nottransferred",data:[[">90% to Aug",65],["Struc. correct",49],["Hypothetical",299],["Kinase",14],["steroid dehydrogenase",7],["Egg protein",7],["MEG",5],["The rest",114]]}]}})});
 </script>
+</section>
+
+<section class="mySlide">
+<h2>Pie Chart (link)</h2>
+<pre id="7nmec" style="display:none;">
+v5,change
+one_to_one_transfer,7805
+Merged,645
+Split,640
+Model_change,340
+Confirmed_deletion,74
+Potential_deletion,872
+</pre>
+<div id="crlxg5"></div>
+<script>
+$(function(){var t=$("#7nmec").html().replace(/[ 	]+/g,",");Highcharts.chart("crlxg5",{chart:{type:"pie",style:{fontFamily:"Arial"},options3d:{enabled:true,alpha:45,beta:0}},data:{csv:t},plotOptions:{pie:{allowPointSelect:!0,cursor:"pointer",depth:45,dataLabels:{enabled:!0,format:"<b>{point.name}</b>: {point.y:.2f}"},point:{events:{click:function(){var l="https://scholar.google.com/scholar?hl=en&q="+this.options.name;window.open(l)}}}}},tooltip:{pointFormat:"<b>{point.percentage:.1f}%</b>"},title:{text:"V5 IDs on V7"},legend:{enabled:!1},credits:{enabled:!1}})});</script>
 </section>
 
 <section class="mySlide">
