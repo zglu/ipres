@@ -5,7 +5,7 @@
 		var newTextBoxDiv = $(document.createElement('div')).attr("id", 'Slide' + counter);
                 newTextBoxDiv.after().html('<label>Slide #'+ counter + ': </label>' + '<br>'+
 			'<textarea rows="6" style="background-color: #f3f3f3; resize: none; width: 95%;" name="textbox' + counter + 
-			'" id="textbox' + counter + '" value="" >'+ "\n"+ '<section class="mySlide">' + "\n\n" + '</section>' + '\n'+ '</textarea>');
+			'" id="textbox' + counter + '" value="" >'+ "\n"+ '<section>' + "\n" + '<div class="wrap">'+ '\n\n' + '</div>\n' + '</section>' + '\n'+ '</textarea>');
 		newTextBoxDiv.appendTo("#TextBoxesGroup");
 		counter++;
 	    });
@@ -34,7 +34,6 @@
 			msg += "\n" + $('#textbox' + i).val();
 		}
 			msg += "\n" + $("#boxFoot").val();
-		// $('#preview').html(msg);
 		var prevFrame = document.getElementById('preview'),
     		    ipreview = prevFrame.contentDocument || prevFrame.contentWindow.document;
 		ipreview.open();
