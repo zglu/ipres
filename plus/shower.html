@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>IPRES - HTML Slides using Shower</title>
+<link href="/static/favicon.png" rel="icon"/>
+<link rel='stylesheet' href='/static/style.css'/>
+<!-- http://www.mkyong.com/jquery/how-to-add-remove-textbox-dynamically-with-jquery/ --> 
+<!-- <script src="jquery.min.js"></script> -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<script type="text/javascript" src="/static/ipresEdit-shower.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-65088045-9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-65088045-9');
+</script>
+</head>
+
+<body>
+<article>
+<nav><center><a href="/"><img src="/static/logo.png"/ height="40px;"></a></center></nav>
+
+<p>IPRES is a simple HTML wrapper / presentation editor (<a href="https://github.com/zglu/ipres">https://github.com/zglu/ipres</a>).<br>This page is designed for slides using <a href="https://shwr.me/" target="_blank">Shower</a>.</p>
+
+<section class="editsec">
+<h2 style="color: blue">Edit <i class="fa fa-pencil"></i></h2>
+
+<div> <!-- head part -->
+<label>Head (edit when necessary): </label><br>
+<!-- Code for default slide -->
+<textarea rows="6" id="boxHead" type="text">
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Shower Slides</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://ipres.xyz/plus/static/shower-ribbon-16x10.css"/>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src='https://code.highcharts.com/highcharts.js'></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/drilldown.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+</head>
+<body class="shower list">
+<!-- start of slides -->
+</textarea>
+</div>
+
+<!-- slide content -->
+<div id="TextBoxesGroup"></div>
+
+<div> <!-- foot part -->
+<label>Foot (edit when necessary): </label><br>
+<textarea rows="6" id="boxFoot" type="text">
+<!-- end of slides -->
+<script src="static/shower.min.js"></script>
+</body>
+</html>
+</textarea>
+</div>
+
+<input value="Add Slide" id="addButton" type="button">
+<input value="Remove Last" id="removeButton" type="button">
+<input value="Get Code" id="getCode" type="button">
+<br><br>
+<hr style="border-style: dashed; color: #ddd;">
+<p style="font-size: 0.8em;">&copy; 2017 ipres.xyz&nbsp;-&nbsp;<a href="#">🔝</a></p>
+</section>
+
+<section class="prevsec">
+<span class="showPrev"><h2 id="previewButton" style="color: red;">Preview <i class="fa fa-eye"></i></h2></span>
+<label>Use LEFT/RIGHT to navigate</label>
+<div id="previewContainer">
+<iframe id="preview" frameBorder="0" />
+</div>
+</section>
+
+</article>
+</body>
+</html>
