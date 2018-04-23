@@ -5,7 +5,7 @@
 		var newTextBoxDiv = $(document.createElement('div')).attr("id", 'Slide' + counter);
                 newTextBoxDiv.after().html('<label>Slide #'+ counter + ': </label>' + '<br>'+
 			'<textarea rows="6" style="background-color: #f3f3f3; resize: none; width: 95%;" name="textbox' + counter + 
-			'" id="textbox' + counter + '" value="" >'+ "\n"+ '<section class="slide fade">' + "\n\n" + '</section>' + '\n'+ '</textarea>');
+			'" id="textbox' + counter + '" value="" >'+ "\n"+ '<section class="slide">' + "\n\n" + '</section>' + '\n'+ '</textarea>');
 		newTextBoxDiv.appendTo("#TextBoxesGroup");
 		counter++;
 	    });
