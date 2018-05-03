@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/zglu/ipres/master/static/ipres-favicon.png" width="30%"/>
+<img src="https://raw.githubusercontent.com/zglu/ipres/master/static/favicon.png" width="30%"/>
 
 ## About
 [IPRES](https://ipres.xyz) is a simple interactive presentation editor based on HTML5 and jQuery. The main purpose of this tool is to create HTML presentation with interactive charts (JS-based, e.g., Highcharts, Chartjs, D3js; default to [HighCharts](https://highcharts.com)). You can integrate it with available html presentation framworks, e.g. reveal.js, deck.js, webslides. It can also be used as a quick html page generator.
